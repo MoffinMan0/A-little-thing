@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b815ro75ikdxm"]
+
+[ext_resource type="AudioStream" uid="uid://dovmy3xgt8idt" path="res://Assets/Sounds/Retro_Music_1.wav" id="1_uhwxk"]
+
+[node name="Bg_Track" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_uhwxk")
+autoplay = true
+bus = &"Bg_Volume"

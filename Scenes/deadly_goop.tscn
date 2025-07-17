@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmfqs2lvf7w1k"]
+
+[ext_resource type="Texture2D" uid="uid://ri8vswtpdq7" path="res://Assets/BG_Assets/16x16 Tileset.png" id="1_nvx8n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udmd1"]
+atlas = ExtResource("1_nvx8n")
+region = Rect2(16, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_454lg"]
+atlas = ExtResource("1_nvx8n")
+region = Rect2(32, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1o50y"]
+atlas = ExtResource("1_nvx8n")
+region = Rect2(48, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bgv8"]
+atlas = ExtResource("1_nvx8n")
+region = Rect2(64, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucci3"]
+atlas = ExtResource("1_nvx8n")
+region = Rect2(80, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfhu5"]
+atlas = ExtResource("1_nvx8n")
+region = Rect2(96, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tx50"]
+atlas = ExtResource("1_nvx8n")
+region = Rect2(112, 288, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3i3m0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udmd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_454lg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1o50y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bgv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucci3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfhu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tx50")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Deadly_Goop" type="Node"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_3i3m0")
+autoplay = "default"
+frame_progress = 0.92623

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0icvga6yj3h4"]
+
+[ext_resource type="Script" uid="uid://cn2kdq3glh50n" path="res://Scipts/arrow.gd" id="1_40cdi"]
+[ext_resource type="Texture2D" uid="uid://xwmr67qtehr2" path="res://Assets/Arrow(Projectile)/Arrow01(100x100).png" id="1_h5x2m"]
+[ext_resource type="PackedScene" uid="uid://dintenrr670j6" path="res://Scenes/killzone.tscn" id="2_40cdi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxsqv"]
+size = Vector2(7, 1.5)
+
+[node name="Arrow" type="Node2D"]
+script = ExtResource("1_40cdi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_h5x2m")
+
+[node name="Killzone" parent="." instance=ExtResource("2_40cdi")]
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0.5, 0.25)
+shape = SubResource("RectangleShape2D_xxsqv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="area_entered" from="Killzone" to="." method="_on_killzone_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
